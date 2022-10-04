@@ -2,12 +2,12 @@ import {DidSolIdentifier, DidSolService} from '@identity.com/sol-did-client';
 import {clusterApiUrl, Connection, PublicKey} from "@solana/web3.js";
 
 if (process.argv.length < 3) {
-    console.log("Usage: yarn lookup <REALM>");
+    console.log("Usage: yarn lookup <GOVERNANCE>");
     process.exit(1);
 }
 
-const realm = new PublicKey(process.argv[2])
-const did = `did:sol:devnet:${realm.toString()}`;
+const governance = new PublicKey(process.argv[2])
+const did = `did:sol:devnet:${governance.toString()}`;
 const connection = new Connection(clusterApiUrl('devnet'));
 
 const didService = DidSolService.build(
